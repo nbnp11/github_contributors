@@ -39,6 +39,7 @@ gem 'oj'
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'rails-i18n'
 end
 
 group :development do
