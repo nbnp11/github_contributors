@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_20_145122) do
+ActiveRecord::Schema.define(version: 2019_03_20_173515) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,13 +21,15 @@ ActiveRecord::Schema.define(version: 2019_03_20_145122) do
     t.integer "place"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "contributions"
     t.index ["repo_id"], name: "index_contributors_on_repo_id"
   end
 
   create_table "repos", force: :cascade do |t|
-    t.string "url"
+    t.string "user_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "repo_name"
   end
 
   add_foreign_key "contributors", "repos"
