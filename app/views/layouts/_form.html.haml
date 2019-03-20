@@ -1,4 +1,5 @@
 .col-md-4
-  = simple_form_for('repo', url: contributors_path, method: :post) do |f|
-    = f.input :url, label: 'URL:', input_html: { maxlength: 50, placeholder: 'url' }, required: true
+  %h3 Enter link to GitHub repository
+  = simple_form_for('search', url: search_path, method: :post) do |f|
+    = f.input :url, label: 'URL:', input_html: { maxlength: 50, placeholder: 'https://github.com/nbnp11/github_contributors' }, required: true
     = f.submit 'Search', class: 'btn btn-default'

@@ -1,0 +1,18 @@
+.form
+  = render 'layouts/form'
+%br
+%h1 Search result
+.info
+  %h3 Repository: #{@repo.repo_name}
+  %h3 Owner: #{@repo.user_name}
+.listing
+  %table
+    %tr
+      %th |#|
+      %th |Login|
+      %th |Download Link|
+    - @repo.contributors.each.with_index(1) do |contributor, index|
+      %tr
+        %th #{index}
+        %th #{contributor.login}
+        %th= link_to 'PDF', '#'
