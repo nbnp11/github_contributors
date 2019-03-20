@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 2019_03_20_145122) do
 
   create_table "contributors", force: :cascade do |t|
     t.bigint "repo_id"
+    t.string "login"
+    t.integer "place"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["repo_id"], name: "index_contributors_on_repo_id"
