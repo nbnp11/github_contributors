@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    / %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %script{src: "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"}
+    %title Github Contributors
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+%body
+  .body.container
+    = yield

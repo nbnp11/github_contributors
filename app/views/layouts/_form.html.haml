@@ -1,0 +1,4 @@
+.col-md-4
+  = simple_form_for('repo', url: contributors_path, method: :post) do |f|
+    = f.input :url, label: 'URL:', input_html: { maxlength: 50, placeholder: 'url' }, required: true
+    = f.submit 'Search', class: 'btn btn-default'
