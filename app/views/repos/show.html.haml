@@ -15,4 +15,4 @@
       %tr
         %th #{index}
         %th #{contributor.login}
-        %th= link_to 'PDF', '#'
+        %th= link_to 'PDF', contributor_path(contributor, format: :pdf)
