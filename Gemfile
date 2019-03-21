@@ -32,6 +32,9 @@ gem 'oj'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 
+# zip
+gem 'rubyzip'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'rails-i18n'

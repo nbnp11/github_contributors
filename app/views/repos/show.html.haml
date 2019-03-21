@@ -16,3 +16,4 @@
         %th #{index}
         %th #{contributor.login}
         %th= link_to 'PDF', contributor_path(contributor, format: :pdf)
+  =link_to 'Download zip',download_zip_repo_path(@repo.id)
