@@ -8,7 +8,7 @@ class CreateZip
   end
 
   def call
-    @contributors_url = 'http://localhost:3000/contributors'
+    @contributors_url = 'https://ghcontribs.herokuapp.com/contributors'
     @repo = Repo.find(@repo_id)
     @archive_file = "#{Rails.root}/tmp/archive_#{DateTime.now.strftime("%B_%d_%Y_%k.%m")}.zip"
     Zip::OutputStream.open(@archive_file) do |zos|
