@@ -28,6 +28,10 @@ gem 'faraday'
 #json parser
 gem 'oj'
 
+#pdf generator
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'rails-i18n'
