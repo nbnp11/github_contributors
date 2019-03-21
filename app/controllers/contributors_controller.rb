@@ -3,7 +3,7 @@ class ContributorsController < ApplicationController
     @contributor = Contributor.find(params[:id])
     respond_to do |format|
       format.pdf do
-        render pdf: "Certificate_for_#{@contributor.login}",
+        render pdf: @contributor.id.to_s,
                         template: 'contributors/show.pdf.haml',
                      disposition: 'attachment'
       end
