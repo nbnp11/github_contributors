@@ -1,5 +1,5 @@
-.col-md-4
+.col-md-4.form
   %h3 Enter link to GitHub repository
   = simple_form_for('search', url: search_path, method: :post) do |f|
-    = f.input :url, label: 'URL:', input_html: { maxlength: 50, placeholder: 'https://github.com/nbnp11/github_contributors' }, required: true
-    = f.submit 'Search', class: 'btn btn-default'
+    = f.input :url, label: 'URL:', input_html: { placeholder: 'https://github.com/nbnp11/github_contributors' }, required: true
+    = f.submit 'Search', class: 'btn btn-primary'
