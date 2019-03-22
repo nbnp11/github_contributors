@@ -8,12 +8,12 @@ RSpec.describe Repo, type: :model do
     end
 
     it 'wont be valid without user_name' do
-      repo = Repo.new(repo_name: 'test')
+      repo = Repo.new(repo_name: 'testing')
       expect(repo.valid?).to be false
     end
 
     it 'will be valid with user_name and repo_name' do
-      repo = Repo.new(repo_name: 'test', user_name: 'test')
+      repo = Repo.new(repo_name: 'testing', user_name: 'testing')
       expect(repo.valid?).to be true
     end
   end

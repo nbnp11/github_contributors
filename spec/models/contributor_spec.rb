@@ -8,13 +8,13 @@ RSpec.describe Contributor, type: :model do
     end
 
     it 'wont validate without repo' do
-      contributor = Contributor.new(login: 'test')
+      contributor = Contributor.new(login: 'testing')
       expect(contributor.valid?).to be false
     end
 
     it 'will be valid with repo and login' do
-      repo = Repo.new(id: 1, user_name: 'test', repo_name: 'test')
-      contributor = repo.contributors.new(login: 'test')
+      repo = Repo.new(id: 999, user_name: 'testing', repo_name: 'testing')
+      contributor = repo.contributors.new(login: 'testing')
       expect(contributor.valid?).to be true
     end
   end

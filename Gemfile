@@ -38,6 +38,7 @@ gem 'rubyzip'
 group :development, :test do
   gem 'rspec-rails'
   gem 'rails-i18n'
+  gem 'rails-controller-testing'
 end
 
 group :development do
