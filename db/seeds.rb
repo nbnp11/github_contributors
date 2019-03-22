@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+if Rails.env.test?
+  Repo.create!(repo_name: 'test', user_name: 'test')
+  Repo.first.contributors.create!(login: 'test')
+end

@@ -1,5 +1,20 @@
 require 'rails_helper'
 
 RSpec.describe Repo, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context 'validation' do
+    it 'wont be valid without repo_name' do
+      repo = Repo.new()
+      expect(repo.valid?).to be false
+    end
+
+    it 'wont be valid without user_name' do
+      repo = Repo.new(repo_name: 'testing')
+      expect(repo.valid?).to be false
+    end
+
+    it 'will be valid with user_name and repo_name' do
+      repo = Repo.new(repo_name: 'testing', user_name: 'testing')
+      expect(repo.valid?).to be true
+    end
+  end
 end
