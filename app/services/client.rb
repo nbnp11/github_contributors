@@ -27,10 +27,5 @@ class Client
   def request(http_method:, endpoint:)
     response = client.public_send(http_method, endpoint)
     Oj.load(response.body)
-    #if response.body.first == 'message'
-    #  "Contributors not found"
-    #else
-    #  Oj.load(response.body)
-    #end
   end
 end
