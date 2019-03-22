@@ -1,0 +1,28 @@
+.form {
+  form {
+    input {
+      margin-bottom: 5%;
+      width: 100%
+    }
+  }
+}
+
+.repos {
+  .listing {
+    font-size: 18px;
+    table {
+      margin-bottom: 2%;
+      tr {
+        margin-bottom: 1%;
+      }
+      th {
+        text-align: center;
+        margin-right: 2%;
+      }
+      td {
+        text-align: center;
+        margin-right: 2%;
+      }
+    }
+  }
+}
