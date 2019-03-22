@@ -11,6 +11,7 @@ class ReposController < ApplicationController
                    filename: "certificate_#{@repo.repo_name}.zip",
                        type: 'application/zip',
                 disposition: 'attachment')
-    redirect_to repo_path(@repo)
+    @message = "Start downloading"
+    redirect_to repo_path(@repo, message: @message)
   end
 end
