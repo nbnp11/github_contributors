@@ -1,11 +1,10 @@
 :ruby
-  if @message.match?(/Success/)
-    @style = "color: green; font-size: 18px;" 
-  elsif @message.match?(/Error/)
-    @style = "color: red; font-size: 18px;"
-  elsif @message.match?(/Download/)
-    @style = "color: blue; font-size: 18px;"
-  end
+  if @message
+    if @message.match?(/Success/)
+      @style = "color: green; font-size: 18px;" 
+    else
+      @style = "color: red; font-size: 18px;"
+    end
 
 .row
   = render 'layouts/form'
