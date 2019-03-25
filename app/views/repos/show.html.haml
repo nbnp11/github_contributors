@@ -1,29 +1,29 @@
 :ruby
-/  @message ||= ''
-/  if @message.match?(/Success/)
-/    @style = "color: green; font-size: 18px;" 
-/  else
-/    @style = "color: red; font-size: 18px;"
-/  end
+  @message ||= ''
+  if @message.match?(/Success/)
+    @style = "color: green; font-size: 18px;" 
+  else
+    @style = "color: red; font-size: 18px;"
+  end
 
 .row
   = render 'layouts/form'
 .row.repos
   %h1 Search result:
-  / %span{style: @style} #{@message}
-  / - if @message.match?(/Success/)
-  .info
-    %h3 Repository: #{@repo.repo_name}
-    %h3 Owner: #{@repo.user_name}
-  .listing
-    %table
-      %tr
-        %th |#|
-        %th |Login|
-        %th |Download Link|
-      - @repo.contributors.each.with_index(1) do |contributor, index|
+  %span{style: @style} #{@message}
+  - if @message.match?(/Success/)
+    .info
+      %h3 Repository: #{@repo.repo_name}
+      %h3 Owner: #{@repo.user_name}
+    .listing
+      %table
         %tr
-          %td #{index}
-          %td #{contributor.login}
-          %td= link_to 'PDF', contributor_path(contributor, format: :pdf)
-    =link_to 'Download zip',download_zip_repo_path(@repo.id)
+          %th |#|
+          %th |Login|
+          %th |Download Link|
+        - @repo.contributors.each.with_index(1) do |contributor, index|
+          %tr
+            %td #{index}
+            %td #{contributor.login}
+            %td= link_to 'PDF', contributor_path(contributor, format: :pdf)
+      =link_to 'Download zip',download_zip_repo_path(@repo.id)
